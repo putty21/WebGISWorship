@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>
+		<title>SIG Tempat Ibadah</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh7Xfdh42Ro9CNFPkvoZhFVhEpTeOP16g"></script>
+		<script src="js/GeoJSON.js"></script>
+		<script src="../script.js"></script>
+		<script>
+		var server = 'http://192.168.1.44/t2/mobile/';
+			function init()
+			{
+				peta();
+				kecamatanTampil();
+				tempatibadah();
+			}
+
+			function peta()
+			{
+			  google.maps.visualRefresh = true;
+			    map = new google.maps.Map(document.getElementById('map'), 
+			    {
+			      zoom: 13,
+			      center: new google.maps.LatLng(-0.304820, 100.381421),
+			      mapTypeId: google.maps.MapTypeId.ROADMAP
+			    });
+			}
+		</script>
+	</title>
+</head>
+<body onload="init()">
+	<div id="map" style="width:100%;height:100%; z-index:50"></div>
+</body>
+</html>
