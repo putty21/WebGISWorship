@@ -2393,7 +2393,7 @@ function aktifkanRadiusSekitar(){
 
 function oleholehsekitar(latitude,longitude,rad){ // SOUVENIR SEKITAR MASJID
       $('#table_kanan_souvenir').empty();
-      $('#table_kanan_souvenir').append("<tr><th class='centered'>Souvenir Name</th><th class='centered'>Action</th></tr>");
+      $('#table_kanan_souvenir').append("<tr><th class='centered' colspan='4'>Souvenir Name</th><th class='centered'>Action</th></tr>");
       cekRadius1();
           $.ajax({url: server+'carioleholeh.php?lat='+latitude+'&long='+longitude+'&rad='+rad, data: "", dataType: 'json', success: function(rows){
             for (var i in rows){
@@ -2424,14 +2424,14 @@ function oleholehsekitar(latitude,longitude,rad){ // SOUVENIR SEKITAR MASJID
               map.setCenter(centerBaru);
         klikInfoWindow_oleh(id_oleh_oleh);
               map.setZoom(14);
-        $('#table_kanan_souvenir').append("<tr><td>"+nama_oleh_oleh+"</td><td><a role='button' style='margin-right:10px' title='position' class='btn btn-success fa fa-map-marker' onclick='detailoleh(\""+id_oleh_oleh+"\");'></a><a role='button' style='margin-right:10px' title='Detail' class='btn btn-success fa fa-info' onclick='modal_oo(\""+id_oleh_oleh+"\");'></a></a><a role='button' class='btn btn-success fa fa-bus' style='margin-right:10px' title='Local Transportation' onclick='angkotsouvenir(\""+id_oleh_oleh+"\",\""+lat+"\",\""+lon+"\");info12();'></a><a role='button' style='margin-right:10px' title='Route from mosque' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
+        $('#table_kanan_souvenir').append("<tr><td colspan='4' style='width:30%'>"+nama_oleh_oleh+"</td><td><a role='button' style='margin:5px' title='position' class='btn btn-success fa fa-map-marker' onclick='detailoleh(\""+id_oleh_oleh+"\");'></a><a role='button' style='margin:5px' title='Detail' class='btn btn-success fa fa-info' onclick='modal_oo(\""+id_oleh_oleh+"\");'></a></a><a role='button' class='btn btn-success fa fa-bus' style='margin:5px' title='Local Transportation' onclick='angkotsouvenir(\""+id_oleh_oleh+"\",\""+lat+"\",\""+lon+"\");info12();'></a><a role='button' style='margin:5px' title='Route from mosque' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
             }//end for
           }});//end ajax
         }
 
     function kulinersekitar(latitude,longitude,rad){ // KULINER SEKITAR MASJID
       $('#table_kanan_culinary').empty();
-      $('#table_kanan_culinary').append("<tr><th class='centered'>Culinary Name</th><th class='centered'>Action</th></tr>");
+      $('#table_kanan_culinary').append("<tr><th class='centered' colspan='4'>Culinary Name</th><th class='centered'>Action</th></tr>");
       cekRadius1();
           $.ajax({url: server+'carikuline.php?lat='+latitude+'&long='+longitude+'&rad='+rad, data: "", dataType: 'json', success: function(rows){
             for (var i in rows){
@@ -2462,14 +2462,14 @@ function oleholehsekitar(latitude,longitude,rad){ // SOUVENIR SEKITAR MASJID
               map.setCenter(centerBaru);
         klikInfoWindow_kuliner(id);
               map.setZoom(14);
-              $('#table_kanan_culinary').append("<tr><td>"+name+"</td><td><a role='button' title='position' class='btn btn-success fa fa-map-marker' style='margin-right:10px' onclick='detailculinary(\""+id+"\");'></a><a role='button' title='Detail' class='btn btn-success fa fa-info' style='margin-right:10px' onclick='modal_kuliner(\""+id+"\");'></a><a role='button' class='btn btn-success fa fa-bus' style='margin-right:10px' title='Local Transportation' onclick='angkotkuliner(\""+id+"\",\""+lat+"\",\""+lon+"\");'></a><a role='button' title='Route from mosque' style='margin-right:10px' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
+              $('#table_kanan_culinary').append("<tr><td colspan='4' style='width:30%'>"+name+"</td><td><a role='button' title='position' class='btn btn-success fa fa-map-marker' style='margin:5px' onclick='detailculinary(\""+id+"\");'></a><a role='button' title='Detail' class='btn btn-success fa fa-info' style='margin:5px' onclick='modal_kuliner(\""+id+"\");'></a><a role='button' class='btn btn-success fa fa-bus' style='margin:5px' title='Local Transportation' onclick='angkotkuliner(\""+id+"\",\""+lat+"\",\""+lon+"\");'></a><a role='button' title='Route from mosque' style='margin:5px' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
             }
           }});
         }
 
 function hotelsekitar(latitude,longitude,rad){ // HOTEL SEKITAR MASJID
       $('#table_kanan_hotel').empty();
-      $('#table_kanan_hotel').append("<tr><th class='centered'>Hotel Name</th><th class='centered'>Action</th></tr>");  
+      $('#table_kanan_hotel').append("<tr><th class='centered' colspan='4'>Hotel Name</th><th class='centered'>Action</th></tr>");  
       cekRadius1();
           $.ajax({url: server+'carihotel.php?lat='+latitude+'&long='+longitude+'&rad='+rad, data: "", dataType: 'json', success: function(rows){
             for (var i in rows){
@@ -2501,14 +2501,14 @@ function hotelsekitar(latitude,longitude,rad){ // HOTEL SEKITAR MASJID
               map.setCenter(centerBaru);
         klikInfoWindow_hotel(id_hotel);
               map.setZoom(14);
-      $('#table_kanan_hotel').append("<tr><td>"+nama+"</td><td><a role='button' title='position' style='margin-right:10px' class='btn btn-success fa fa-map-marker' onclick='detailhotel(\""+id_hotel+"\");'></a><a role='button' title='Detail' style='margin-right:10px' class='btn btn-success fa fa-info' onclick='modal_hotel(\""+id_hotel+"\");'></a><a role='button' class='btn btn-success fa fa-bus' style='margin-right:10px' title='Local Transportation' onclick='angkothotel(\""+id_hotel+"\",\""+lat+"\",\""+lon+"\");'></a><a role='button' title='Route from mosque' style='margin-right:10px' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
+      $('#table_kanan_hotel').append("<tr><td colspan='4' style='width:30%'>"+nama+"</td><td><a role='button' title='position' style='margin:5px' class='btn btn-success fa fa-map-marker' onclick='detailhotel(\""+id_hotel+"\");'></a><a role='button' title='Detail' style='margin:5px' class='btn btn-success fa fa-info' onclick='modal_hotel(\""+id_hotel+"\");'></a><a role='button' class='btn btn-success fa fa-bus' style='margin:5px' title='Local Transportation' onclick='angkothotel(\""+id_hotel+"\",\""+lat+"\",\""+lon+"\");'></a><a role='button' title='Route from mosque' style='margin:5px' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
             }//end for
           }});//end ajax
         }
 
     function industrisekitar(latitude,longitude,rad){ // INDUSTRI SEKITAR MASJID
        $('#table_kanan_industry').empty();
-      $('#table_kanan_industry').append("<tr><th class='centered'>Industry Name</th><th class='centered'>Action</th></tr>"); 
+      $('#table_kanan_industry').append("<tr><th class='centered' colspan='4'>Industry Name</th><th class='centered'>Action</th></tr>"); 
       cekRadius1();
       console.log("ini industri");
           $.ajax({url: server+'cariindustri.php?lat='+latitude+'&long='+longitude+'&rad='+rad, data: "", dataType: 'json', success: function(rows){
@@ -2541,7 +2541,7 @@ function hotelsekitar(latitude,longitude,rad){ // HOTEL SEKITAR MASJID
               map.setCenter(centerBaru);
         klikInfoWindow_industri(id_industri);
               map.setZoom(14);
-      $('#table_kanan_industry').append("<tr><td>"+nama_industri+"</td><td><a role='button' title='position' style='margin-right:10px' class='btn btn-success fa fa-map-marker' onclick='detailik(\""+id_industri+"\");'></a><a role='button' title='info' style='margin-right:10px' class='btn btn-success fa fa-info' onclick='modal_industry(\""+id_industri+"\");'></a><a role='button' class='btn btn-success fa fa-bus' style='margin-right:10px' title='Local Transportation' onclick='angkotindustri(\""+id_industri+"\",\""+lat+"\",\""+lon+"\");'></a><a role='button' style='margin-right:10px' title='Route from mosque' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
+      $('#table_kanan_industry').append("<tr><td colspan='4' style='width:30%'>"+nama_industri+"</td><td><a role='button' title='position' style='margin:5px' class='btn btn-success fa fa-map-marker' onclick='detailik(\""+id_industri+"\");'></a><a role='button' title='info' style='margin:5px' class='btn btn-success fa fa-info' onclick='modal_industry(\""+id_industri+"\");'></a><a role='button' class='btn btn-success fa fa-bus' style='margin:5px' title='Local Transportation' onclick='angkotindustri(\""+id_industri+"\",\""+lat+"\",\""+lon+"\");'></a><a role='button' style='margin:5px' title='Route from mosque' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
             }//end for
           }});//end ajax
         }
@@ -2549,7 +2549,7 @@ function hotelsekitar(latitude,longitude,rad){ // HOTEL SEKITAR MASJID
 
   function owsekitar(latitude,longitude,rad){ // OW SEKITAR MASJID
       $('#table_kanan_tourism').empty();
-        $('#table_kanan_tourism').append("<tr><th class='centered'>Tourism Name</th><th class='centered'>Action</th></tr>");
+        $('#table_kanan_tourism').append("<tr><th class='centered' colspan='4'>Tourism Name</th><th class='centered'>Action</th></tr>");
       cekRadius1();
       console.log(server+'cariow.php?lat='+latitude+'&long='+longitude+'&rad='+rad)
           $.ajax({url: server+'cariow.php?lat='+latitude+'&long='+longitude+'&rad='+rad, data: "", dataType: 'json', success: function(rows){
@@ -2581,14 +2581,14 @@ function hotelsekitar(latitude,longitude,rad){ // HOTEL SEKITAR MASJID
         klikInfoWindow_ow(id);
               map.setZoom(14);
 
-      $('#table_kanan_tourism').append("<tr><td>"+nama+"</td><td><a role='button' style='margin-right:10px' title='position' class='btn btn-success fa fa-map-marker' onclick='detailow(\""+id+"\");'></a><a role='button' style='margin-right:10px' title='Detail' class='btn btn-success fa fa-info' onclick='modal_tw(\""+id+"\");'></a><a role='button' class='btn btn-success fa fa-bus' style='margin-right:10px' title='Local Transportation' onclick='angkotwisata(\""+id+"\",\""+lat+"\",\""+lon+"\");'></a><a role='button' style='margin-right:10px' title='Route from mosque' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
+      $('#table_kanan_tourism').append("<tr><td colspan='4' style='width:30%'>"+nama+"</td><td><a role='button' style='margin:5px' title='position' class='btn btn-success fa fa-map-marker' onclick='detailow(\""+id+"\");'></a><a role='button' style='margin:5px' title='Detail' class='btn btn-success fa fa-info' onclick='modal_tw(\""+id+"\");'></a><a role='button' class='btn btn-success fa fa-bus' style='margin:5px' title='Local Transportation' onclick='angkotwisata(\""+id+"\",\""+lat+"\",\""+lon+"\");'></a><a role='button' style='margin:5px' title='Route from mosque' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
             }//end for
           }});//end ajax
         }
 
         function restaurantsekitar(latitude,longitude,rad){ // restaurant SEKITAR MASJID
          $('#table_kanan_restaurant').empty();
-        $('#table_kanan_restaurant').append("<tr><th class='centered'>Restaurant Name</th><th class='centered'>Action</th></tr>");
+        $('#table_kanan_restaurant').append("<tr><th class='centered' colspan='4'>Restaurant Name</th><th class='centered'>Action</th></tr>");
       cekRadius1();
       console.log(server+'carirestaurant.php?lat='+latitude+'&long='+longitude+'&rad='+rad)
           $.ajax({url: server+'carirestaurant.php?lat='+latitude+'&long='+longitude+'&rad='+rad, data: "", dataType: 'json', success: function(rows){
@@ -2617,7 +2617,7 @@ function hotelsekitar(latitude,longitude,rad){ // HOTEL SEKITAR MASJID
               map.setZoom(14);
 
 
-      $('#table_kanan_restaurant').append("<tr><td>"+nama+"</td><td><a role='button' style='margin-right:10px' title='position' class='btn btn-success fa fa-map-marker' onclick='detailrestaurant(\""+id+"\");'></a><a role='button' style='margin-right:10px' title='Detail' class='btn btn-success fa fa-info' onclick='modal_restaurant(\""+id+"\");'></a><a role='button' style='margin-right:10px' class='btn btn-success fa fa-bus' title='Local Transportation' onclick='angkotrestaurant(\""+id+"\",\""+lat+"\",\""+lon+"\");'></a><a role='button' style='margin-right:10px' title='Route from mosque' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
+      $('#table_kanan_restaurant').append("<tr><td colspan='4' style='width:30%'>"+nama+"</td><td><a role='button' style='margin:5px' title='position' class='btn btn-success fa fa-map-marker' onclick='detailrestaurant(\""+id+"\");'></a><a role='button' style='margin:5px' title='Detail' class='btn btn-success fa fa-info' onclick='modal_restaurant(\""+id+"\");'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-bus' title='Local Transportation' onclick='angkotrestaurant(\""+id+"\",\""+lat+"\",\""+lon+"\");'></a><a role='button' style='margin:5px' title='Route from mosque' class='btn btn-success fa fa-road' value='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a></td></tr>");
             }//end for
           }});//end ajax
         }
